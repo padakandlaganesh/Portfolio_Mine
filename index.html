@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ganesh Padakandla - B.Tech CSE (AI & ML) Student & Full Stack Developer Personal Website Portfolio. Building scalable web apps and intelligent AI/ML systems.">
+    <title>Ganesh Padakandla | Full Stack Developer & AI/ML Student</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor-dot" id="cursor-dot"></div>
+    <div class="custom-cursor-ring" id="cursor-ring"></div>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="header-container">
+            <a href="#" class="logo-wrap">
+                <div class="logo-dot">G</div>
+                <div class="logo">Ganesh<span>.</span></div>
+            </a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#hero" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#work" class="nav-link">Projects</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Theme" title="Toggle Light/Dark Mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <a href="#contact" class="btn-neo" style="padding: 8px 18px; font-size: 0.85rem;">Let's Talk <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <button class="mobile-nav-toggle" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay">
+        <ul class="mobile-nav-list">
+            <li><a href="#hero" class="mobile-nav-link">Home</a></li>
+            <li><a href="#about" class="mobile-nav-link">About</a></li>
+            <li><a href="#services" class="mobile-nav-link">Services</a></li>
+            <li><a href="#work" class="mobile-nav-link">Projects</a></li>
+            <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="grid-container">
+                <div class="hero-content scroll-reveal">
+                    <div class="badge-hero">
+                        Hi everyone 👋, I'm Ganesh Padakandla
+                        <div class="badge-hero-corner corner-tl"></div>
+                        <div class="badge-hero-corner corner-tr"></div>
+                        <div class="badge-hero-corner corner-bl"></div>
+                        <div class="badge-hero-corner corner-br"></div>
+                    </div>
+                    <h1 class="hero-title">
+                        Final-Year CSE Student<br><span class="text-gradient">Full Stack Developer</span>
+                    </h1>
+                    <p class="hero-description">
+                        I am a final-year CSE (AI & ML) student at LBRCE with a passion for building robust full-stack applications and integrating advanced AI/ML models to solve complex real-world challenges.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#work" class="btn-neo">View My Projects <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <!-- Linked directly to serve as a download with target blank wrapper for compatibility -->
+                        <a href="ganesh_resume.pdf" download="Ganesh_Padakandla_Resume.pdf" target="_blank" class="btn-neo-outline">Download Resume <i class="fa-solid fa-download"></i></a>
+                    </div>
+                    <div class="find-me">
+                        <span>Find me on:</span>
+                        <div class="find-me-icons">
+                            <a href="https://github.com/padakandlaganesh" target="_blank" class="find-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://linkedin.com/in/ganesh-padakandla" target="_blank" class="find-icon active" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual-wrapper scroll-reveal">
+                    <div class="portrait-wrapper">
+                        <!-- Slanted decorative green shapes behind portrait -->
+                        <div class="portrait-bg-shape"></div>
+                        <div class="portrait-bg-shape-2"></div>
+                        
+                        <!-- Portrait Image Container -->
+                        <div class="portrait-img-box">
+                            <img src="ganesh.jpg" alt="Ganesh Padakandla Portrait">
+                        </div>
+
+                        <!-- Zigzag doodle decoration -->
+                        <div class="zigzag-doodle">~~</div>
+
+                        <!-- Rotating Badge -->
+                        <div class="rotating-badge-container">
+                            <svg class="rotating-text-svg" viewBox="0 0 100 100">
+                                <defs>
+                                    <path id="circlePath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" />
+                                </defs>
+                                <text>
+                                    <textPath href="#circlePath" startOffset="0%">explore more • scroll down • about me •</textPath>
+                                </text>
+                            </svg>
+                            <i class="fa-solid fa-arrow-down rotating-badge-arrow"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Infinite Scrolling Marquee Ticker -->
+        <section class="marquee-container">
+            <div class="marquee-content">
+                <div class="marquee-item"><span class="marquee-star">✦</span> Full Stack Development</div>
+                <div class="marquee-item"><span class="marquee-star">✦</span> Python Programming</div>
+                <div class="marquee-item"><span class="marquee-star">✦</span> React & Tailwind CSS</div>
+                <div class="marquee-item"><span class="marquee-star">✦</span> B.Tech CSE (AI & ML)</div>
+                <div class="marquee-item"><span class="marquee-star">✦</span> Machine Learning & NLP</div>
+                <div class="marquee-item"><span class="marquee-star">✦</span> SQL & MySQL Databases</div>
+                
+                <div class="marquee-item"><span class="marquee-star">✦</span> Full Stack Development</div>
+                <div class="marquee-item"><span class="marquee-star">✦</span> Python Programming</div>
+                <div class="marquee-item"><span class="marquee-star">✦</span> React & Tailwind CSS</div>
+                <div class="marquee-item"><span class="marquee-star">✦</span> B.Tech CSE (AI & ML)</div>
+                <div class="marquee-item"><span class="marquee-star">✦</span> Machine Learning & NLP</div>
+                <div class="marquee-item"><span class="marquee-star">✦</span> SQL & MySQL Databases</div>
+            </div>
+        </section>
+
+        <!-- About & Interactive Tabs Section -->
+        <section id="about" class="about-interactive-tabs section-padding">
+            <div class="section-header-centered scroll-reveal">
+                <div class="section-badge">
+                    Milestones & Background
+                    <div class="badge-hero-corner corner-tl"></div>
+                    <div class="badge-hero-corner corner-tr"></div>
+                    <div class="badge-hero-corner corner-bl"></div>
+                    <div class="badge-hero-corner corner-br"></div>
+                </div>
+                <h2 class="section-title-large">
+                    Building intelligent full-stack applications with modern technology stacks!
+                </h2>
+            </div>
+
+            <div class="grid-container">
+                <div class="tabs-wrapper scroll-reveal">
+                    <!-- Tab Navigation -->
+                    <div class="tabs-nav">
+                        <button class="tab-btn active" data-tab="education">Education</button>
+                        <button class="tab-btn" data-tab="skills">Skills</button>
+                        <button class="tab-btn" data-tab="internships">Internships</button>
+                        <button class="tab-btn" data-tab="achievements">Certifications & Achievements</button>
+                    </div>
+
+                    <!-- Tab Contents -->
+                    <div class="tab-contents">
+                        
+                        <!-- Panel: Education -->
+                        <div class="tab-panel active" id="panel-education">
+                            <div class="education-list">
+                                <div class="education-card">
+                                    <div class="edu-header">
+                                        <h3 class="edu-title">B.Tech in Computer Science & Engineering (AI & ML)</h3>
+                                        <span class="edu-date">2023 - 2027</span>
+                                    </div>
+                                    <p class="edu-college">Lakireddy Bali Reddy College of Engineering (LBRCE) (Autonomous), Mylavaram</p>
+                                    <p class="edu-grade"><i class="fa-solid fa-graduation-cap text-accent"></i> CGPA: 8.47 (Up to 6th Semester)</p>
+                                </div>
+                                
+                                <div class="education-card">
+                                    <div class="edu-header">
+                                        <h3 class="edu-title">Intermediate (Class XII)</h3>
+                                        <span class="edu-date">2021 - 2023</span>
+                                    </div>
+                                    <p class="edu-college">Vit junior college, Narasaraopet</p>
+                                    <p class="edu-grade"><i class="fa-solid fa-square-poll-vertical text-accent"></i> CGPA: 84.6%</p>
+                                </div>
+
+                                <div class="education-card">
+                                    <div class="edu-header">
+                                        <h3 class="edu-title">SSC (Class X)</h3>
+                                        <span class="edu-date">2020 - 2021</span>
+                                    </div>
+                                    <p class="edu-college">SV High School, Narasaraopet</p>
+                                    <p class="edu-grade"><i class="fa-solid fa-school text-accent"></i> Percentage: 98%</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Panel: Skills -->
+                        <div class="tab-panel" id="panel-skills">
+                            <div class="skills-categories">
+                                <div class="skill-category-card">
+                                    <h3 class="skill-cat-title"><i class="fa-solid fa-code"></i> Languages & Frameworks</h3>
+                                    <div class="skills-tags-wrap">
+                                        <span class="skill-pill">Python</span>
+                                        <span class="skill-pill">React.js</span>
+                                        <span class="skill-pill">Tailwind CSS</span>
+                                        <span class="skill-pill">Java</span>
+                                        <span class="skill-pill">JavaScript</span>
+                                        <span class="skill-pill">HTML / CSS</span>
+                                        <span class="skill-pill">Node.js</span>
+                                        <span class="skill-pill">Express.js</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-category-card">
+                                    <h3 class="skill-cat-title"><i class="fa-solid fa-database"></i> Databases & Storage</h3>
+                                    <div class="skills-tags-wrap">
+                                        <span class="skill-pill">MySQL</span>
+                                        <span class="skill-pill">SQL</span>
+                                    </div>
+                                </div>
+
+                                <div class="skill-category-card">
+                                    <h3 class="skill-cat-title"><i class="fa-solid fa-brain"></i> Artificial Intelligence</h3>
+                                    <div class="skills-tags-wrap">
+                                        <span class="skill-pill">LangChain</span>
+                                        <span class="skill-pill">Transformers</span>
+                                        <span class="skill-pill">PyTorch / TensorFlow</span>
+                                        <span class="skill-pill">Hugging Face</span>
+                                        <span class="skill-pill">OpenAI API</span>
+                                        <span class="skill-pill">RAG (Retrieval-Augmented Gen)</span>
+                                    </div>
+                                </div>
+
+                                <div class="skill-category-card">
+                                    <h3 class="skill-cat-title"><i class="fa-solid fa-toolbox"></i> Tools & IDEs</h3>
+                                    <div class="skills-tags-wrap">
+                                        <span class="skill-pill">Git & GitHub</span>
+                                        <span class="skill-pill">Cursor</span>
+                                        <span class="skill-pill">VS Code</span>
+                                        <span class="skill-pill">Antigravity</span>
+                                        <span class="skill-pill">LaTeX</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Fun Terminal Launcher -->
+                            <div style="margin-top: 40px; text-align: center;">
+                                <button class="btn-neo" id="open-terminal-btn">Launch Interactive Terminal Console <i class="fa-solid fa-terminal"></i></button>
+                            </div>
+                        </div>
+
+                        <!-- Panel: Internships -->
+                        <div class="tab-panel" id="panel-internships">
+                            <div class="education-list">
+                                <div class="education-card">
+                                    <div class="edu-header">
+                                        <h3 class="edu-title">Deloitte Data Analyst Virtual Internship</h3>
+                                        <span class="edu-date">Completed</span>
+                                    </div>
+                                    <p class="edu-college">Deloitte Virtual Experience Platform</p>
+                                    <p class="edu-grade"><i class="fa-solid fa-briefcase text-accent"></i> Analyzed dashboard metrics, investigated datasets, and proposed data-driven recommendations.</p>
+                                </div>
+                                
+                                <div class="education-card">
+                                    <div class="edu-header">
+                                        <h3 class="edu-title">AICTE AI & ML Internship</h3>
+                                        <span class="edu-date">Completed</span>
+                                    </div>
+                                    <p class="edu-college">AICTE Virtual Program</p>
+                                    <p class="edu-grade"><i class="fa-solid fa-brain text-accent"></i> Built foundations in training machine learning classifiers and evaluating accuracy metrics.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Panel: Achievements -->
+                        <div class="tab-panel" id="panel-achievements">
+                            <div class="achievements-list">
+                                <div class="achievement-card">
+                                    <i class="fa-solid fa-certificate ach-icon"></i>
+                                    <div class="ach-details">
+                                        <h4>Simplilearn Generative AI Certification</h4>
+                                        <p>Focused on fine-tuning processes, prompt engineering mechanics, and vector databases.</p>
+                                    </div>
+                                </div>
+                                <div class="achievement-card">
+                                    <i class="fa-solid fa-certificate ach-icon"></i>
+                                    <div class="ach-details">
+                                        <h4>Oracle AI Foundations Certification</h4>
+                                        <p>Validated concepts in neural network infrastructures, cognitive services, and basic cloud ML.</p>
+                                    </div>
+                                </div>
+                                <div class="achievement-card">
+                                    <i class="fa-solid fa-award ach-icon"></i>
+                                    <div class="ach-details">
+                                        <h4>Runner-up, Hackathon at RVR & JC College</h4>
+                                        <p>Designed and built a functional web prototype in a 24-hour competitive environment.</p>
+                                    </div>
+                                </div>
+                                <div class="achievement-card">
+                                    <i class="fa-solid fa-people-group ach-icon"></i>
+                                    <div class="ach-details">
+                                        <h4>Coordinator, Lakshya 2K26</h4>
+                                        <p>Spearheaded technical events and coordinated teams for the national-level student symposium.</p>
+                                    </div>
+                                </div>
+                                <div class="achievement-card">
+                                    <i class="fa-solid fa-book-open ach-icon"></i>
+                                    <div class="ach-details">
+                                        <h4>NPTEL Certifications</h4>
+                                        <p>Successfully completed professional academic courses in: <span class="text-accent">[NPTEL Certifications - ADD YOUR CERTIFICATION NAMES HERE]</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services section-padding">
+            <div class="section-header-centered scroll-reveal">
+                <div class="section-badge">
+                    My Services
+                    <div class="badge-hero-corner corner-tl"></div>
+                    <div class="badge-hero-corner corner-tr"></div>
+                    <div class="badge-hero-corner corner-bl"></div>
+                    <div class="badge-hero-corner corner-br"></div>
+                </div>
+                <h2 class="section-title-large">Tech Services I am Providing</h2>
+            </div>
+
+            <div class="grid-container">
+                <div class="services-grid-new scroll-reveal">
+                    
+                    <!-- Service 1 -->
+                    <div class="service-card-new">
+                        <div class="srv-header">
+                            <div class="srv-icon"><i class="fa-solid fa-code"></i></div>
+                            <span class="srv-count">08 Projects Completed</span>
+                        </div>
+                        <h3 class="srv-title">Full Stack Development</h3>
+                        <p class="srv-description">
+                            Designing and developing highly responsive, SEO-optimized frontend UIs using React and Tailwind CSS, coupled with robust, fast REST APIs using Node.js, Express, or Spring Boot.
+                        </p>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="service-card-new">
+                        <div class="srv-header">
+                            <div class="srv-icon"><i class="fa-solid fa-brain"></i></div>
+                            <span class="srv-count">04 Projects Completed</span>
+                        </div>
+                        <h3 class="srv-title">AI & ML Integration</h3>
+                        <p class="srv-description">
+                            Building intelligent search and Q&A features using Retrieval-Augmented Generation (RAG) pipelines, semantic vector indices, Hugging Face models, OpenAI APIs, and LangChain orchestration.
+                        </p>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="service-card-new">
+                        <div class="srv-header">
+                            <div class="srv-icon"><i class="fa-solid fa-database"></i></div>
+                            <span class="srv-count">06 Projects Completed</span>
+                        </div>
+                        <h3 class="srv-title">Database & System Design</h3>
+                        <p class="srv-description">
+                            Designing and optimizing relational databases using SQL and MySQL. Structuring queries, schema normalization patterns, and implementing secure token-based user authentication (JWT).
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Selected Projects Section -->
+        <section id="work" class="work section-padding">
+            <div class="grid-container">
+                <div class="projects-header-wrapper scroll-reveal">
+                    <div class="projects-header-left">
+                        <div class="section-badge">
+                            Projects
+                            <div class="badge-hero-corner corner-tl"></div>
+                            <div class="badge-hero-corner corner-tr"></div>
+                            <div class="badge-hero-corner corner-bl"></div>
+                            <div class="badge-hero-corner corner-br"></div>
+                        </div>
+                        <h2 class="section-title-large" style="margin-top: 10px;">My Latest Projects</h2>
+                        <p style="color: var(--text-secondary); margin-top: 16px;">
+                            Discover the projects I've been building, combining backend performance and structural scalability with visual details and clean UIs.
+                        </p>
+                    </div>
+                    <a href="#contact" class="btn-neo">Contact Me <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="projects-grid-new scroll-reveal">
+                    
+                    <!-- Project 1: ServiceConnect -->
+                    <div class="project-card-new">
+                        <div class="project-img-holder">
+                            <div class="project-tag-absolute">MERN Platform</div>
+                            <div class="project-graphic-fallback">
+                                <i class="fa-solid fa-handshake"></i>
+                            </div>
+                        </div>
+                        <div class="project-details-new">
+                            <h3 class="project-title-new">ServiceConnect — Local Service Marketplace Platform</h3>
+                            <p class="project-desc-new">
+                                Built a full-stack MERN platform enabling customers to discover, book, and review verified local service providers with role-based dashboards for customers, providers, and admins. Implemented JWT authentication, real-time booking updates via Socket.io, an admin panel for provider verification, Google Maps-based location search, Cloudinary image uploads, and automated email/PDF invoice generation.
+                            </p>
+                            <div class="project-tech-tags">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">Express</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">Socket.io</span>
+                                <span class="tech-tag">JWT</span>
+                                <span class="tech-tag">Cloudinary</span>
+                            </div>
+                            <div class="project-links-new">
+                                <a href="https://github.com/padakandlaganesh" target="_blank" class="btn-neo-outline" style="font-size: 0.85rem; padding: 4px 0;">GitHub Code <i class="fa-solid fa-code-branch"></i></a>
+                                <span class="text-muted" style="font-size: 0.85rem; display: flex; align-items: center; gap: 4px;"><i class="fa-solid fa-globe"></i> [ADD YOUR LIVE DEMO URL HERE]</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Hallucination Detection & Correction -->
+                    <div class="project-card-new">
+                        <div class="project-img-holder">
+                            <div class="project-tag-absolute">Final Year Project / AI</div>
+                            <div class="project-graphic-fallback">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                        </div>
+                        <div class="project-details-new">
+                            <h3 class="project-title-new">Hallucination Detection and Correction in Large Language Models</h3>
+                            <p class="project-desc-new">
+                                Developed an AI system using Retrieval-Augmented Generation (RAG) and Natural Language Inference (NLI) to detect and correct hallucinated responses in Large Language Models. Integrated LangChain, OpenAI API, Hugging Face, and MongoDB to retrieve verified information and generate reliable AI responses.
+                            </p>
+                            <div class="project-tech-tags">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Transformers</span>
+                                <span class="tech-tag">LangChain</span>
+                                <span class="tech-tag">PyTorch / TensorFlow</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">OpenAI API</span>
+                                <span class="tech-tag">Hugging Face</span>
+                                <span class="tech-tag">RAG</span>
+                            </div>
+                            <div class="project-links-new">
+                                <a href="https://github.com/padakandlaganesh" target="_blank" class="btn-neo-outline" style="font-size: 0.85rem; padding: 4px 0;">GitHub Code <i class="fa-solid fa-code-branch"></i></a>
+                                <span class="text-muted" style="font-size: 0.85rem; display: flex; align-items: center; gap: 4px;"><i class="fa-solid fa-globe"></i> [ADD YOUR LIVE DEMO URL HERE]</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section-padding">
+            <div class="grid-container">
+                <div class="contact-info-new scroll-reveal">
+                    <div class="section-badge">
+                        Contact
+                        <div class="badge-hero-corner corner-tl"></div>
+                        <div class="badge-hero-corner corner-tr"></div>
+                        <div class="badge-hero-corner corner-bl"></div>
+                        <div class="badge-hero-corner corner-br"></div>
+                    </div>
+                    <h2 class="contact-title-new">Have a Project in Mind? Let's Talk!</h2>
+                    <p class="contact-desc-new">
+                        Whether you are looking to hire a software engineer intern/full-time, consult on an AI/ML project, or simply chat about code, feel free to drop a message!
+                    </p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method-card">
+                            <div class="method-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div class="method-details">
+                                <span class="label">Email Me</span>
+                                <a href="mailto:padakandlaganesh123@gmail.com" class="value">padakandlaganesh123@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-method-card">
+                            <div class="method-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div class="method-details">
+                                <span class="label">Phone</span>
+                                <a href="tel:+919908397242" class="value">+91 9908397242</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-method-card">
+                            <div class="method-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="method-details">
+                                <span class="label">Location</span>
+                                <span class="value">Narasaraopet, Andhra Pradesh, India</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Connect Link Box (similar to bottom right of screenshot) -->
+                    <div class="contact-banner-box">
+                        <h3 class="banner-title">Let's Connect on LinkedIn</h3>
+                        <a href="https://linkedin.com/in/ganesh-padakandla" target="_blank" class="banner-link">in/ganesh-padakandla</a>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper-new scroll-reveal">
+                    <!-- Form connects to mailto/Formspree -->
+                    <form id="portfolio-contact-form" action="mailto:padakandlaganesh123@gmail.com" method="post" enctype="text/plain" class="contact-form-new">
+                        <div class="form-group-new">
+                            <label for="form-name">Full Name</label>
+                            <input type="text" id="form-name" name="name" required class="form-control-new" placeholder="Enter your name">
+                        </div>
+                        <div class="form-group-new">
+                            <label for="form-email">Email Address</label>
+                            <input type="email" id="form-email" name="email" required class="form-control-new" placeholder="Enter your email">
+                        </div>
+                        <div class="form-group-new">
+                            <label for="form-subject">Subject</label>
+                            <input type="text" id="form-subject" name="subject" required class="form-control-new" placeholder="What is this regarding?">
+                        </div>
+                        <div class="form-group-new">
+                            <label for="form-message">Your Message</label>
+                            <textarea id="form-message" name="message" required rows="5" class="form-control-new" placeholder="Write your message here..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-neo">
+                            Send Message <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <div id="form-response-message" class="form-response-new"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hidden Terminal Window Drawer -->
+        <div id="terminal-drawer" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0,0,0,0.7); z-index: 2000; align-items: center; justify-content: center;">
+            <div style="background-color: #08080a; border: 2px solid var(--border-color); border-radius: 12px; width: 90%; max-width: 600px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+                <div style="background-color: #0f0f13; border-bottom: 2px solid var(--border-color); padding: 12px 20px; display: flex; justify-content: space-between; align-items: center;">
+                    <div style="display: flex; gap: 6px;">
+                        <span style="width: 12px; height: 12px; border-radius: 50%; background-color: #ff5f56; display: inline-block;"></span>
+                        <span style="width: 12px; height: 12px; border-radius: 50%; background-color: #ffbd2e; display: inline-block;"></span>
+                        <span style="width: 12px; height: 12px; border-radius: 50%; background-color: #27c93f; display: inline-block;"></span>
+                    </div>
+                    <span style="font-family: monospace; font-size: 0.8rem; color: #6b7280;">ganesh@portfolio: ~</span>
+                    <button id="close-terminal-btn" style="background: none; border: none; color: #fff; cursor: pointer; font-size: 1rem;"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div style="height: 380px; padding: 20px; font-family: 'Space Grotesk', monospace; font-size: 0.85rem; overflow-y: auto; color: #e5e7eb;" id="terminal-body">
+                    <div class="terminal-line">Welcome to Ganesh Padakandla's Interactive Console (v1.0.0)</div>
+                    <div class="terminal-line text-muted">Type <span class="text-accent">help</span> for a list of available commands.</div>
+                    <div class="terminal-line terminal-input-line" style="display: flex; align-items: center; gap: 8px;">
+                        <span class="terminal-prompt" style="color: var(--accent); font-weight: 600;">ganesh@portfolio:~$</span>
+                        <input type="text" id="terminal-input" autocomplete="off" style="background: transparent; border: none; outline: none; color: #fff; font-family: inherit; font-size: inherit; flex-grow: 1;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-new">
+        <div class="footer-container-new">
+            <div class="footer-logo-new">Ganesh<span>.</span></div>
+            <p class="footer-copy-new">&copy; 2026 Ganesh Padakandla. All Rights Reserved. Designed and built with premium code guidelines.</p>
+            <button class="scroll-top-btn-new" id="scroll-top-btn" aria-label="Scroll to Top">
+                <i class="fa-solid fa-arrow-up"></i>
+            </button>
+        </div>
+    </footer>
+
+    <!-- Core Script -->
+    <script src="script.js"></script>
+</body>
+</html>
