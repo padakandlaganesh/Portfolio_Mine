@@ -185,6 +185,15 @@ body {
     background-color: var(--accent);
 }
 
+/* Custom Cursor styling when Terminal is active/opened */
+body.terminal-active .custom-cursor-dot:not(.hovered) {
+    background-color: var(--accent);
+}
+
+body.terminal-active .custom-cursor-ring:not(.hovered) {
+    border-color: #ffffff;
+}
+
 /* ==========================================================================
    HEADER & NAVIGATION
    ========================================================================== */

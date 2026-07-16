@@ -230,6 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (openTerminalBtn && terminalDrawer) {
         openTerminalBtn.addEventListener('click', () => {
             terminalDrawer.style.display = 'flex';
+            document.body.classList.add('terminal-active');
             setTimeout(() => {
                 if (terminalInput) terminalInput.focus();
             }, 100);
@@ -239,12 +240,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (closeTerminalBtn && terminalDrawer) {
         closeTerminalBtn.addEventListener('click', () => {
             terminalDrawer.style.display = 'none';
+            document.body.classList.remove('terminal-active');
         });
         
         // Close on clicking outside terminal window
         terminalDrawer.addEventListener('click', (e) => {
             if (e.target === terminalDrawer) {
                 terminalDrawer.style.display = 'none';
+                document.body.classList.remove('terminal-active');
             }
         });
     }
@@ -332,6 +335,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 break;
             case 'exit':
                 terminalDrawer.style.display = 'none';
+                document.body.classList.remove('terminal-active');
                 break;
             case 'clear':
                 const inputLineHtml = `
