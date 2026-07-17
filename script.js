@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let mouseY = 0;
     let ringX = 0;
     let ringY = 0;
+    let lastSpawnTime = 0;
     
     // Check if device supports hover interactions (mouse)
     const isDesktop = window.matchMedia('(pointer: fine)').matches;
@@ -22,6 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
             // Instantly position the inner dot
             cursorDot.style.left = `${mouseX}px`;
             cursorDot.style.top = `${mouseY}px`;
+            
+            // Spawn trailing particles
+            const now = Date.now();
+            if (now - lastSpawnTime > 45) {
+                createCursorParticle(mouseX, mouseY);
+                lastSpawnTime = now;
+            }
         });
         
         // Smoothly interpolate the outer ring (fluid lag effect)
@@ -290,10 +298,15 @@ document.addEventListener('DOMContentLoaded', () => {
                         - <span class="text-accent">skills</span>     : List programming languages and tech stacks.<br>
                         - <span class="text-accent">projects</span>   : View featured portfolio projects.<br>
                         - <span class="text-accent">contact</span>    : Print professional mail and profiles.<br>
+                        - <span class="text-accent">matrix</span>     : Run digital screen matrix effect.<br>
                         - <span class="text-accent">clear</span>      : Clear the screen logs.<br>
                         - <span class="text-accent">exit</span>       : Close the terminal emulator console.
                     </div>
                 `);
+                break;
+            case 'matrix':
+            case 'rain':
+                triggerMatrixRain();
                 break;
             case 'about':
                 appendTerminalLine(`
@@ -456,6 +469,266 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollTopBtn.style.visibility = 'hidden';
         scrollTopBtn.style.transform = 'translateY(15px)';
         scrollTopBtn.style.transition = 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)';
+    }
+
+    /* ==========================================================================
+       SPECIAL EFFECTS IMPLEMENTATION
+       ========================================================================== */
+
+    // 1. Scroll Progress Bar
+    const scrollProgress = document.getElementById('scroll-progress');
+    if (scrollProgress) {
+        window.addEventListener('scroll', () => {
+            const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+            scrollProgress.style.width = scrolled + '%';
+        });
+    }
+
+    // 2. Custom Cursor Particle Trail Spawner
+    function createCursorParticle(x, y) {
+        const particle = document.createElement('div');
+        particle.className = 'cursor-particle';
+        particle.style.left = `${x}px`;
+        particle.style.top = `${y}px`;
+        
+        const size = Math.random() * 6 + 4;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        
+        document.body.appendChild(particle);
+        
+        setTimeout(() => {
+            particle.style.opacity = '0';
+            particle.style.transform = 'translate(-50%, -50%) scale(0.1)';
+        }, 50);
+        
+        setTimeout(() => {
+            particle.remove();
+        }, 600);
+    }
+
+    // 3. Magnetic Hover Attraction
+    const magneticElements = document.querySelectorAll('.btn-neo, .theme-toggle-btn, .scroll-top-btn-new, .find-icon, .logo-wrap');
+    if (isDesktop) {
+        magneticElements.forEach(elem => {
+            elem.addEventListener('mousemove', (e) => {
+                const rect = elem.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                elem.style.transform = `translate(${x * 0.35}px, ${y * 0.35}px)`;
+            });
+            elem.addEventListener('mouseleave', () => {
+                elem.style.transform = 'translate(0px, 0px)';
+            });
+        });
+    }
+
+    // 4. Hero Typewriter Title loop
+    const words = ["Full Stack Developer", "AI/ML CSE Student"];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typewriterText = document.getElementById('typewriter-text');
+    
+    function type() {
+        const currentWord = words[wordIndex];
+        if (isDeleting) {
+            charIndex--;
+        } else {
+            charIndex++;
+        }
+        
+        if (typewriterText) {
+            typewriterText.textContent = currentWord.substring(0, charIndex);
+        }
+        
+        let typeSpeed = isDeleting ? 40 : 80;
+        
+        if (!isDeleting && charIndex === currentWord.length) {
+            typeSpeed = 1500;
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+            typeSpeed = 400;
+        }
+        
+        setTimeout(type, typeSpeed);
+    }
+    if (typewriterText) {
+        setTimeout(type, 1000);
+    }
+
+    // 5. Interactive Particle Background Canvas
+    const canvas = document.getElementById('hero-particles');
+    if (canvas) {
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let particleCount = 60;
+        
+        const resizeCanvas = () => {
+            canvas.width = canvas.parentElement.offsetWidth;
+            canvas.height = canvas.parentElement.offsetHeight;
+        };
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+        
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2.5 + 0.5;
+                this.speedX = Math.random() * 0.6 - 0.3;
+                this.speedY = Math.random() * 0.6 - 0.3;
+                this.alpha = Math.random() * 0.5 + 0.2;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                
+                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+                
+                if (this.x < -10 || this.x > canvas.width + 10 || this.y < -10 || this.y > canvas.height + 10) {
+                    this.reset();
+                }
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                const isDark = document.body.classList.contains('dark-theme');
+                ctx.fillStyle = isDark ? `rgba(0, 223, 130, ${this.alpha})` : `rgba(0, 223, 130, ${this.alpha * 0.7})`;
+                ctx.fill();
+            }
+        }
+        
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+        
+        const animateParticles = () => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+                
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (dist < 100) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        const alpha = (1 - dist / 100) * 0.12;
+                        ctx.strokeStyle = `rgba(0, 223, 130, ${alpha})`;
+                        ctx.lineWidth = 0.8;
+                        ctx.stroke();
+                    }
+                }
+                
+                if (isDesktop && mouseX && mouseY) {
+                    const rect = canvas.getBoundingClientRect();
+                    const canvasMouseX = mouseX - rect.left;
+                    const canvasMouseY = mouseY - rect.top;
+                    
+                    const dx = particles[i].x - canvasMouseX;
+                    const dy = particles[i].y - canvasMouseY;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (dist < 150) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(canvasMouseX, canvasMouseY);
+                        const alpha = (1 - dist / 150) * 0.25;
+                        ctx.strokeStyle = `rgba(0, 223, 130, ${alpha})`;
+                        ctx.lineWidth = 1;
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animateParticles);
+        };
+        animateParticles();
+    }
+
+
+    // 7. Matrix Easter Egg Screen Rain in Terminal
+    function triggerMatrixRain() {
+        const existingCanvas = terminalBody.querySelector('.matrix-canvas');
+        if (existingCanvas) existingCanvas.remove();
+        
+        const matrixCanvas = document.createElement('canvas');
+        matrixCanvas.className = 'matrix-canvas';
+        terminalBody.appendChild(matrixCanvas);
+        
+        matrixCanvas.width = terminalBody.clientWidth;
+        matrixCanvas.height = terminalBody.clientHeight;
+        
+        const mCtx = matrixCanvas.getContext('2d');
+        const katakana = "ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝ1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        const alphabet = katakana.split("");
+        
+        const fontSize = 14;
+        const columns = matrixCanvas.width / fontSize;
+        
+        const rainDrops = [];
+        for (let x = 0; x < columns; x++) {
+            rainDrops[x] = 1;
+        }
+        
+        let animationFrameId;
+        
+        const drawRain = () => {
+            mCtx.fillStyle = 'rgba(8, 8, 10, 0.08)';
+            mCtx.fillRect(0, 0, matrixCanvas.width, matrixCanvas.height);
+            
+            mCtx.fillStyle = '#00df82';
+            mCtx.font = fontSize + 'px monospace';
+            
+            for (let i = 0; i < rainDrops.length; i++) {
+                const text = alphabet[Math.floor(Math.random() * alphabet.length)];
+                mCtx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
+                
+                if (rainDrops[i] * fontSize > matrixCanvas.height && Math.random() > 0.975) {
+                    rainDrops[i] = 0;
+                }
+                rainDrops[i]++;
+            }
+        };
+        
+        const runMatrix = () => {
+            drawRain();
+            animationFrameId = requestAnimationFrame(runMatrix);
+        };
+        runMatrix();
+        
+        appendTerminalLine(`
+            <div style="color: var(--accent); margin-top: 5px; margin-bottom: 5px;">
+                Matrix digital rain activated! Press <span class="text-accent" style="cursor: pointer; text-decoration: underline;" id="stop-matrix-btn">here</span> or click anywhere to exit.
+            </div>
+        `);
+        
+        const stopMatrix = () => {
+            cancelAnimationFrame(animationFrameId);
+            matrixCanvas.remove();
+            document.removeEventListener('click', stopMatrixOnClick);
+        };
+        
+        const stopMatrixOnClick = (e) => {
+            if (e.target.id === 'stop-matrix-btn' || matrixCanvas.contains(e.target) || e.target === matrixCanvas) {
+                stopMatrix();
+            }
+        };
+        
+        document.addEventListener('click', stopMatrixOnClick);
     }
 
 });

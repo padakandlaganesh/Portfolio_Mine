@@ -16,6 +16,11 @@
 </head>
 <body>
 
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scroll-progress"></div>
+    </div>
+
     <!-- Custom Cursor -->
     <div class="custom-cursor-dot" id="cursor-dot"></div>
     <div class="custom-cursor-ring" id="cursor-ring"></div>
@@ -66,6 +71,9 @@
 
         <!-- Hero Section -->
         <section id="hero" class="hero">
+            <!-- Hero Particles Canvas Background -->
+            <canvas id="hero-particles" class="hero-particles-canvas"></canvas>
+            
             <div class="grid-container">
                 <div class="hero-content scroll-reveal">
                     <div class="badge-hero">
@@ -76,7 +84,7 @@
                         <div class="badge-hero-corner corner-br"></div>
                     </div>
                     <h1 class="hero-title">
-                        Final-Year CSE Student<br><span class="text-gradient">Full Stack Developer</span>
+                        Final-Year CSE Student<br><span class="text-gradient" id="typewriter-text">Full Stack Developer</span><span class="typewriter-cursor">|</span>
                     </h1>
                     <p class="hero-description">
                         I am a final-year CSE (AI & ML) student at LBRCE with a passion for building robust full-stack applications and integrating advanced AI/ML models to solve complex real-world challenges.

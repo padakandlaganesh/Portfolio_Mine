@@ -1603,3 +1603,94 @@ textarea.form-control-new {
         grid-template-columns: 1fr;
     }
 }
+
+/* ==========================================================================
+   SPECIAL EFFECTS STYLES
+   ========================================================================== */
+
+/* Scroll Progress Bar */
+.scroll-progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: transparent;
+    z-index: 10005;
+    pointer-events: none;
+}
+
+.scroll-progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--accent) 0%, #00ffc8 100%);
+    box-shadow: 0 0 10px var(--accent), 0 0 5px rgba(0, 223, 130, 0.5);
+    transition: width 0.05s linear;
+}
+
+/* Hero Particles Canvas */
+.hero-particles-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.65;
+}
+
+.hero .grid-container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Typewriter Cursor */
+.typewriter-cursor {
+    font-weight: 400;
+    color: var(--accent);
+    animation: typewriter-blink 1s step-end infinite;
+    margin-left: 2px;
+}
+
+@keyframes typewriter-blink {
+    from, to { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+
+/* Custom Cursor Particle Trails */
+.cursor-particle {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    transition: width 0.5s, height 0.5s, opacity 0.5s;
+}
+
+/* Magnetic Element Transitions */
+.btn-neo, 
+.theme-toggle-btn, 
+.scroll-top-btn-new, 
+.find-icon, 
+.logo-wrap {
+    transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Matrix Terminal overlay canvas */
+.matrix-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1999;
+    background-color: rgba(8, 8, 10, 0.95);
+    pointer-events: auto;
+}
+
